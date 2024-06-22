@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Plans Embedded Payment Solution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .hero-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            background-image: url(data:image/png;base64,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); /* Replace with the path to your hero image */
+        }
+        .hero-content {
+            flex: 1;
+            background-color: #0056b3;
+            color: white;
+            padding: 30px;
+        }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: f0f0f0;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .feature {
+            flex-basis: calc(33% - 100px);
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .feature i {
+            font-size: 2em;
+            color: #0056b3;
+            margin-bottom: 100px;
+        }
+        .cta {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .cta button {
+            background-color: white;
+            color: #0056b3;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.idplans.com/wp-content/uploads/2022/08/id-plans-logocropped.png" alt="ID Plans Logo" class="logo"> <!-- Replace with the path to your logo -->
+        <div class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <h1>Embedded Payment Solution</h1>
+                <p1>Transform Your Payment Processing</p1>
+                <p>Turn your cost center into a revenue stream while providing tenants with flexible payment options.</p>
+            </div>
+        </div>
+
+        <h2>Revolutionizing Rent Payments for Commercial Real Estate</h2>
+        <p>Our embedded payment solution seamlessly integrates with your existing ID Plans software, offering a win-win for property managers and tenants alike.</p>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-plug"></i>
+                <h3>Seamless Integration</h3>
+                <p>Effortlessly integrate with your existing ID Plans dashboard for a unified experience.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-credit-card"></i>
+                <h3>Multiple Payment Options</h3>
+                <p>Accept various online payment methods, including credit cards and ACH transfers.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-sliders-h"></i>
+                <h3>Flexible Fee Structures</h3>
+                <p>Customize fee structures to pass on costs or absorb them based on your business model.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>New Revenue Stream</h3>
+                <p>Turn payment processing into a profit center with our revenue-sharing model.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-smile"></i>
+                <h3>Enhanced Tenant Experience</h3>
+                <p>Provide tenants with more payment flexibility, improving satisfaction and reducing late payments.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Robust Security</h3>
+                <p>State-of-the-art security measures ensure PCI DSS compliance and fraud prevention.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Ready to Revolutionize Your Rent Collection?</h2>
+            <p>Join the future of commercial real estate payments today.</p>
+            <button>Request a Demo</button>
+        </div>
+    </div>
+</body>
+</html>
